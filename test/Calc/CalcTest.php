@@ -35,4 +35,15 @@ class CalcTest extends PHPUnit
 		$this->assertEquals(200.00, $calc->getValueForDelivery());				 		
 		$this->assertEquals(280.00, $calc->calc());
 	}
+
+	public function testWinterPriceAndPacDelivery()
+	{
+		$calc = new Calc($this->winter, 
+						 $this->pac, 
+						 new Product('Bola de futebol', 200.00, 1, 'VG'));
+
+		$this->assertEquals(140.00, $calc->getValueForProduct());				 		
+		$this->assertEquals(70.00, $calc->getValueForDelivery());				 		
+		$this->assertEquals(210.00, $calc->calc());
+	}
 }
